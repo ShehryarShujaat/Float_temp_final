@@ -298,6 +298,9 @@ class _HomeUIState extends State<HomeUI> {
               Container(
                 child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
+                    shape: new RoundedRectangleBorder(
+                      borderRadius: new BorderRadius.circular(30.0),
+                    ),
                     minimumSize: Size(5.w, 6.h),
                     textStyle: TextStyle(
                         fontSize: 15.sp,
@@ -315,6 +318,9 @@ class _HomeUIState extends State<HomeUI> {
               ),
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
+                  shape: new RoundedRectangleBorder(
+                    borderRadius: new BorderRadius.circular(30.0),
+                  ),
                   minimumSize: Size(150, 50),
                   textStyle: TextStyle(
                       fontSize: 15.sp,
@@ -341,6 +347,9 @@ class _HomeUIState extends State<HomeUI> {
               ),
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
+                  shape: new RoundedRectangleBorder(
+                    borderRadius: new BorderRadius.circular(30.0),
+                  ),
                   minimumSize: Size(5.w, 6.h),
                   textStyle: TextStyle(
                       fontSize: 15.sp,
@@ -911,28 +920,42 @@ class SettingPage extends StatelessWidget {
   }
 }
 
+int s = 20;
+
 class About_us extends StatelessWidget {
   const About_us({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: BottomAppBar(
-          elevation: 0.0,
-          color: Colors.transparent,
-          child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-            Text("Powered by  "),
-            Text("OCTATHORN",
-                style: const TextStyle(fontWeight: FontWeight.bold))
-          ])),
-      appBar: AppBar(
-        centerTitle: true,
-        title: const Text('About Us'),
-      ),
-      body: Center(
-        child: const Text('Open route'),
-      ),
-    );
+        bottomNavigationBar: BottomAppBar(
+            elevation: 0.0,
+            color: Colors.transparent,
+            child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+              Text("Powered by  "),
+              Text("OCTATHORN",
+                  style: const TextStyle(fontWeight: FontWeight.bold))
+            ])),
+        appBar: AppBar(
+          centerTitle: true,
+          title: const Text('About Us'),
+        ),
+        body: Column(children: [
+          Padding(
+              padding: EdgeInsets.symmetric(vertical: 7.h, horizontal: 3.h),
+              child: new Column(
+                children: [
+                  Text(
+                    'Making Life Enjoyable Products LLC (MLE Products, LLC) aims to provide high quality products that meet the needs of our customers and ultimately make life more enjoyable.  Our products are created based on studying real experiences and concerns of everyday people and developing products that will make navigating life experiences easier.  By focus on taking cumbersome tasks or pain points out of an activity, the remaining enjoyment felt by completing the activity is exhilarating.',
+                    style: TextStyle(fontSize: 13.sp),
+                  ),
+                  Text(''),
+                  Text(
+                      'Scott Hines is the owner and CEO of MLE Products, LLC.  He started the company in 2020 with a vision to bring his inventions to the market.  As a father of four, he has experienced the concerns first hand and understands the need for a safe and easy to use product that remedies the concerns.  The float thermometer was created to help caregivers from experiencing the problems he had and to allow them to focus on the more important things in life, creating great memories with family!Please be sure to register your product.',
+                      style: TextStyle(fontSize: 13.sp))
+                ],
+              )),
+        ]));
   }
 }
 
